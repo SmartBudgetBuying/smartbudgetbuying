@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog – Smart Budget Buying</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Blog</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="filter">
+  <button onclick="filterPosts('all')">All</button>
+  <button onclick="filterPosts('reviews')">Reviews</button>
+  <button onclick="filterPosts('comparisons')">Comparisons</button>
+  <button onclick="filterPosts('guides')">Buying Guides</button>
+</section>
+
+<section class="posts">
+  <article class="post reviews">
+    <h3>Best Budget Earphones Under ₹1000</h3>
+    <p>Category: Reviews</p>
+  </article>
+
+  <article class="post comparisons">
+    <h3>Bluetooth vs Wired Earphones – Which Is Better?</h3>
+    <p>Category: Comparisons</p>
+  </article>
+
+  <article class="post guides">
+    <h3>How to Choose the Best Power Bank</h3>
+    <p>Category: Buying Guides</p>
+  </article>
+</section>
+
+<script>
+function filterPosts(category) {
+  const posts = document.querySelectorAll('.post');
+  posts.forEach(post => {
+    post.style.display = (category === 'all' || post.classList.contains(category)) ? 'block' : 'none';
+  });
+}
+</script>
+
+</body>
+</html>
